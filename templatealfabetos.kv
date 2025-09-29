@@ -1,0 +1,49 @@
+<TelaLetra>:
+    MeuLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "imagens/fundotudo.png"
+        Widget:
+            size_hint: 0.78, 1   # ocupa tanana da tela
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            canvas.before:
+                Color:
+                    rgba: 0.945, 0.925, 0.902, 0.6  # cor f1ece6 com 60% transparência
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+    FloatLayout:
+        Image:
+            source: root.imagem_letra
+            size_hint: None, None
+            size: 120, 120
+            pos_hint: {'center_x': 0.5, 'y': .75}
+        Button:
+            text: " "
+            size_hint: None, None
+            size: 90, 90
+            pos_hint: {'right': 1, 'y': 0}  # aqui você ajusta X e Y
+            background_normal: "imagens/iconhomepage.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            border: (0,0,0,0)
+            on_release: app.mudar_tela('principal')
+        Button:
+            text: " "
+            size_hint: None, None
+            size: 90, 90
+            pos_hint: {'right': 0.9, 'y': 0}
+            background_normal: "imagens/iconvoltar.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            border: (0,0,0,0)
+            on_release: app.voltar_tela()
+        VideoPlayer:
+            id: video_letra
+            source: ""
+            state: "pause"  # inicia pausado
+            options: {'eos': 'loop'}
+            pos_hint: {'center_x': 0.5, 'y': 0.2}
+            size_hint: 0.5, 0.5
+

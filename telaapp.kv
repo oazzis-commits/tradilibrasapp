@@ -1,0 +1,831 @@
+<TelaPrincipal>:
+    MeuLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "imagens/fundotudo.png"
+        Widget:
+            size_hint: 0.78, 1   # ocupa tanana da tela
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            canvas.before:
+                Color:
+                    rgba: 0.945, 0.925, 0.902, 0.6  # cor f1ece6 com 60% transparência
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        BoxLayout:
+            MeuLayout:
+                Label:
+                    text: "TradiLibras"
+                    font_name: "fontes/titulo.ttf"
+                    id: trad
+                    pos_hint: {'x': .25, 'y': .8}
+                    size_hint: .5, .1
+                    font_size: 80
+                Image:
+                    source: "imagens/logoapp.png"
+                    size_hint: 0.15, 0.15
+                    pos_hint: {'x': 0.6, 'y': 0.78}
+
+                FloatLayout:
+
+            # botao principal oqelibras
+                Button:
+                    text: "O que é Libras?"
+                    font_size: 18
+                    id: oqe
+                    size_hint: .6, None
+                    height: 50
+                    pos_hint: {'x': .209, 'y': .66}
+                    background_normal: "imagens/fundobotoes.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    color: 1,1,1,1
+                    on_release:
+                        app.mudar_tela('oqelibras')
+
+            # botao circular oqelibras
+                Button:
+                    text: ""
+                    size_hint: None, None
+                    size: 80, 80
+                    pos_hint: {'x': .17, 'y': .638}
+                    background_normal: "imagens/iconoqelibras.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    border: (0,0,0,0)
+                    on_release: app.mudar_tela('oqelibras')
+
+                Label:
+                    text: "[b]Sinalização:[/b]"
+                    markup: True
+                    id: sin
+                    font_size: 20
+                    size_hint: .6, None
+                    height: 50
+                    pos_hint: {'x': .209, 'y': .575}
+
+            # botao principal alfabeto
+                Button:
+                    text: "Alfabeto"
+                    font_size: 18
+                    id: alf
+                    size_hint: .6, None
+                    height: 50
+                    pos_hint: {'x': .209, 'y': .501}
+                    background_normal: "imagens/fundobotoes.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    color: 1,1,1,1
+                    on_release:
+                        app.mudar_tela('alfabeto')
+
+            # botao circular alfabeto
+                Button:
+                    text: " "
+                    size_hint: None, None
+                    size: 60, 60
+                    pos_hint: {'x': .175, 'y': .493}
+                    background_normal: "imagens/iconalfabeto.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    border: (0,0,0,0)
+                    on_release:
+                        app.mudar_tela('alfabeto')
+
+            # botao principal saudacoes
+                Button:
+                    text: "Saudações"
+                    font_size: 18
+                    id: sau
+                    size_hint: .6, None
+                    height: 50
+                    pos_hint: {'x': .209, 'y': .416}
+                    background_normal: "imagens/fundobotoes.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    color: 1,1,1,1
+                    on_release:
+                        app.mudar_tela('saudacoes')
+
+            # botao circular saudacoes
+                Button:
+                    text: " "
+                    size_hint: None, None
+                    size: 60, 60
+                    pos_hint: {'x': .175, 'y': .4072}
+                    background_normal: "imagens/iconsaudacoes.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    border: (0,0,0,0)
+                    on_release:
+                        app.mudar_tela('saudacoes')
+
+                Label:
+                    text: "[b]Dúvidas?[/b]"
+                    markup: True
+                    id: duv
+                    font_size: 20
+                    size_hint: .6, None
+                    height: 50
+                    pos_hint: {'x': .209, 'y': .333}
+
+            # botao principal tradutor
+                Button:
+                    text: "Tradução instantânea de sinais"
+                    font_size: 18
+                    size_hint: .6, None
+                    height: 50
+                    pos_hint: {'x': .209, 'y': .258}
+                    id: tra
+                    background_normal: "imagens/fundobotoes.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    color: 1,1,1,1
+                    on_release:
+                        app.mudar_tela('tradutor')
+
+            # botao circular tradutor
+                Button:
+                    text: " "
+                    size_hint: None, None
+                    size: 60, 60
+                    pos_hint: {'x': .175, 'y': .251}
+                    background_normal: "imagens/icontradutor.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    border: (0,0,0,0)
+                    on_release:
+                        app.mudar_tela('tradutor')
+
+            # botao principal praticar
+                Button:
+                    text: "Praticar"
+                    font_size: 18
+                    size_hint: .6, None
+                    height: 50
+                    pos_hint: {'x': .209, 'y': .174}
+                    id: pra
+                    background_normal: "imagens/fundobotoes.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    on_release:
+                        app.mudar_tela('praticar')
+
+            # botao circular praticar
+                Button:
+                    text: " "
+                    size_hint: None, None
+                    size: 60, 60
+                    pos_hint: {'x': .175, 'y': .167}
+                    background_normal: "imagens/iconpraticar.png"
+                    background_down: "imagens/fundobotoes_pressed.png"
+                    border: (0,0,0,0)
+                    on_release:
+                        app.mudar_tela('praticar')
+
+
+<TelaOqelibras>:
+    titoqe: titoqe
+    MeuLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "imagens/fundotudo.png"
+        Widget:
+            size_hint: 0.78, 1   # ocupa tanana da tela
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            canvas.before:
+                Color:
+                    rgba: 0.945, 0.925, 0.902, 0.6  # cor f1ece6 com 60% transparência
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+    FloatLayout:
+        Label:
+            text: "[b]O que é Libras?[/b]"
+            markup: True
+            id: titoqe
+            font_size: 40
+            pos_hint: {'x': 0.05, 'y': 0.35}
+            size_hint: .9, .6
+            halign: 'center'
+            valign: 'top'
+            text_size: self.size
+
+        Label:
+            text: "[b]Como deseja aprender?[/b]"
+            markup: True
+            id: comap
+            font_size: 20
+            pos_hint: {'x': 0.05, 'y': 0.35}
+            size_hint: .9, .6
+            halign: 'center'
+
+        Button:
+            text: "Textos informativos"
+            font_size: 18
+            markup: True
+            id: texin
+            size_hint: .6, None
+            height: 60
+            pos_hint: {'center_x': 0.5, 'y': .5}
+            background_normal: "imagens/fundobotoes.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            color: 1,1,1,1
+            on_release:
+                app.mudar_tela('tela_textinf')
+
+# botao circular
+        Button:
+            text: " "
+            size_hint: None, None
+            size: 77, 77
+            pos_hint: {'x': .16, 'y': .4867}
+            background_normal: "imagens/icontextoinf.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            border: (0,0,0,0)
+            on_release:
+                app.mudar_tela('oqelibras')
+
+        Button:
+            text: "Videoaulas"
+            font_size: 18
+            markup: True
+            id: vidau
+            size_hint: .6, None
+            height: 60
+            pos_hint: {'center_x': 0.5, 'y': .38}
+            background_normal: "imagens/fundobotoes.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            color: 1,1,1,1
+            on_release:
+                app.mudar_tela('tela_vidaula')
+
+# botao circular
+        Button:
+            text: " "
+            size_hint: None, None
+            size: 77, 77
+            pos_hint: {'x': .16, 'y': .3667}
+            background_normal: "imagens/iconvideoaula.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            border: (0,0,0,0)
+            on_release:
+                app.mudar_tela('oqelibras')
+
+        Button:
+            text: " "
+            size_hint: None, None
+            size: 90, 90
+            pos_hint: {'right': 1, 'y': 0}  # aqui você ajusta X e Y
+            background_normal: "imagens/iconhomepage.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            border: (0,0,0,0)
+            on_release: app.mudar_tela('principal')
+
+<TelaAlfabeto>:
+    MeuLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "imagens/fundotudo.png"
+        Widget:
+            size_hint: 0.78, 1   # ocupa tanana da tela
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            canvas.before:
+                Color:
+                    rgba: 0.945, 0.925, 0.902, 0.6  # cor f1ece6 com 60% transparência
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+    FloatLayout:
+        Label:
+            text: "[b]Sinalização:[/b]"
+            markup: True
+            id: sinalf
+            font_size: 40
+            pos_hint: {'x': 0.05, 'y': 0.35}
+            size_hint: .9, .6
+            valign: 'top'
+            text_size: self.size
+        Label:
+            text: "[b]Alfabeto[/b]"
+            markup: True
+            id: sinalfemb
+            font_size: 30
+            pos_hint: {'x': 0.05, 'y': 0.82}
+            size_hint: .9, .6
+            text_size: self.size
+
+        Button:
+            text: "[b]Revisão[/b]"
+            markup: True
+            id: revalf
+            text_size: self.width, self.height  # permite usar halign
+            halign: 'left'
+            valign: 'center'
+            padding_x: 10      # distância do texto da borda
+            font_size: 20
+            pos_hint: {'x': 0.05, 'y': 0.74}
+            size_hint: .25, None
+            height: 40
+            background_normal: "imagens/fundobotoes.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            color: 1,1,1,1
+            on_release:
+                root.manager.current = "tela_pergunta"
+                root.manager.get_screen("tela_pergunta").carregar_perguntas("alfabeto")
+        Image:
+            source: "imagens/iconplay.png"
+            size_hint: None, None
+            size: 35, 35
+            pos_hint: {'x': 0.155, 'y': 0.745}
+
+        Label:
+            text: "[b]Aprenda aqui:[/b]"
+            markup: True
+            id: apralf
+            font_size: 20
+            pos_hint: {'x': 0.155, 'y': 0.65}
+            size_hint: .9, .6
+            text_size: self.size
+        GridLayout:
+            cols: 7
+            spacing: 10
+            size_hint_x: None
+            width: self.minimum_width
+            size_hint_y: None
+            height: self.minimum_height
+            pos_hint: {'center_x': 0.5, 'y': 0.1}
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/a.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("A")
+            Button:
+                text: " "
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/b.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("B")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/c.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("C")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/d.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("D")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/e.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("E")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/f.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("F")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/g.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("G")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/h.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("H")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/i.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("I")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/j.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("J")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/k.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("K")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/l.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("L")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/m.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("M")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/n.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("N")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/o.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("O")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/p.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("P")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/q.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("Q")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/r.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("R")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/s.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("S")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/t.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("T")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/u.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("U")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/v.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("V")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/w.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("W")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/x.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("X")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/y.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("Y")
+            Button:
+                text: ""
+                size_hint: None, None
+                size: 70, 70
+                background_normal: "imagens/z.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                border: [0, 0, 0, 0]
+                on_release: app.mostrar_letra("Z")
+
+        Button:
+            text: " "
+            size_hint: None, None
+            size: 90, 90
+            pos_hint: {'right': 1, 'y': 0}  # aqui você ajusta X e Y
+            background_normal: "imagens/iconhomepage.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            border: (0,0,0,0)
+            on_release: app.voltar_tela()
+
+<TelaSaudacoes>:
+    MeuLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "imagens/fundotudo.png"
+        Widget:
+            size_hint: 0.78, 1   # ocupa tanana da tela
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            canvas.before:
+                Color:
+                    rgba: 0.945, 0.925, 0.902, 0.6  # cor f1ece6 com 60% transparência
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+    FloatLayout:
+        Label:
+            text: "[b]Sinalização:[/b]"
+            markup: True
+            id: sinsau
+            font_size: 40
+            pos_hint: {'x': 0.05, 'y': 0.35}
+            size_hint: .9, .6
+            valign: 'top'
+            text_size: self.size
+        Label:
+            text: "[b]Saudações[/b]"
+            markup: True
+            id: sinsauemb
+            font_size: 30
+            pos_hint: {'x': 0.05, 'y': 0.82}
+            size_hint: .9, .6
+            text_size: self.size
+
+        Button:
+            text: "[b]Revisão[/b]"
+            markup: True
+            id: revsau
+            text_size: self.width, self.height  # permite usar halign
+            halign: 'left'
+            valign: 'center'
+            padding_x: 10      # distância do texto da borda
+            font_size: 20
+            pos_hint: {'x': 0.05, 'y': 0.74}
+            size_hint: .25, None
+            height: 40
+            background_normal: "imagens/fundobotoes.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            color: 1,1,1,1
+            on_release:
+                root.manager.current = "tela_pergunta"
+                root.manager.get_screen("tela_pergunta").carregar_perguntas("saudacoes")
+        Image:
+            source: "imagens/iconplay.png"
+            size_hint: None, None
+            size: 35, 35
+            pos_hint: {'x': 0.155, 'y': 0.745}
+
+        Label:
+            text: "[b]Aprenda aqui:[/b]"
+            markup: True
+            id: aprsau
+            font_size: 20
+            pos_hint: {'x': 0.155, 'y': 0.65}
+            size_hint: .9, .6
+            text_size: self.size
+        GridLayout:
+            cols: 3
+            spacing: 10
+            size_hint_x: None
+            width: self.minimum_width
+            size_hint_y: None
+            height: self.minimum_height
+            pos_hint: {'center_x': 0.5, 'y': 0.28}
+            Button:
+                text: "Bom dia!"
+                font_size: 19
+                id: bomdia
+                size_hint: None, None
+                size: 160, 80
+                background_normal: "imagens/fundobotoes.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                on_release: app.mostrar_cumprimento("BomDia")
+            Button:
+                text: "Boa tarde!"
+                font_size: 19
+                id: boatarde
+                size_hint: None, None
+                size: 160, 80
+                background_normal: "imagens/fundobotoes.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                on_release: app.mostrar_cumprimento("BoaTarde")
+            Button:
+                text: "Boa noite!"
+                font_size: 19
+                id: boanoite
+                size_hint: None, None
+                size: 160, 80
+                background_normal: "imagens/fundobotoes.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                on_release: app.mostrar_cumprimento("BoaNoite")
+            Button:
+                text: "Oi!"
+                font_size: 19
+                id: oi
+                size_hint: None, None
+                size: 160, 80
+                background_normal: "imagens/fundobotoes.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                on_release: app.mostrar_cumprimento("Oi")
+            Button:
+                text: "Tudo bem?"
+                font_size: 19
+                id: tudobem
+                size_hint: None, None
+                size: 160, 80
+                background_normal: "imagens/fundobotoes.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                on_release: app.mostrar_cumprimento("TudoBem")
+            Button:
+                text: "Tchau!"
+                font_size: 19
+                id: tchau
+                size_hint: None, None
+                size: 160, 80
+                background_normal: "imagens/fundobotoes.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                on_release: app.mostrar_cumprimento("Tchau")
+        Button:
+            text: " "
+            size_hint: None, None
+            size: 90, 90
+            pos_hint: {'right': 1, 'y': 0}  # aqui você ajusta X e Y
+            background_normal: "imagens/iconhomepage.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            border: (0,0,0,0)
+            on_release: app.mudar_tela('principal')
+
+
+<TelaTradutor>:
+    MeuLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "imagens/fundotudo.png"
+        Widget:
+            size_hint: 0.78, 1   # ocupa tanana da tela
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            canvas.before:
+                Color:
+                    rgba: 0.945, 0.925, 0.902, 0.6  # cor f1ece6 com 60% transparência
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+    FloatLayout:
+        Button:
+            text: " "
+            size_hint: None, None
+            size: 90, 90
+            pos_hint: {'right': 1, 'y': 0}  # aqui você ajusta X e Y
+            background_normal: "imagens/iconhomepage.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            border: (0,0,0,0)
+            on_release: app.mudar_tela('principal')
+
+
+<TelaPraticar>:
+    MeuLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "imagens/fundotudo.png"
+    FloatLayout:
+        Label:
+            text: "[b]Vamos praticar?[/b]"
+            markup: True
+            id: vampra
+            markup: True
+            font_size: 40
+            pos_hint: {'x': 0.05, 'y': 0.36}
+            size_hint: .9, .6
+            valign: 'top'
+            text_size: self.size
+
+        Label:
+            text: "[b]Escolha o tema:[/b]"
+            markup: True
+            id: escolhatema
+            font_size: 30
+            pos_hint: {'x': 0.05, 'y': 0.82}
+            size_hint: .9, .6
+            text_size: self.size
+
+        Button:
+            text: " "
+            size_hint: None, None
+            size: 90, 90
+            pos_hint: {'right': 1, 'y': 0}  # aqui você ajusta X e Y
+            background_normal: "imagens/iconhomepage.png"
+            background_down: "imagens/fundobotoes_pressed.png"
+            border: (0,0,0,0)
+            on_release: app.mudar_tela('principal')
+
+        GridLayout:
+            cols: 1
+            spacing: 10
+            size_hint: .8, None
+            height: self.minimum_height
+            pos_hint: {"center_x": 0.5, "center_y": 0.45}
+            Button:
+                text: "Aleatório"
+                font_size: 18
+                id: aleatorio
+                size_hint: .8, None
+                height: 50
+                background_normal: "imagens/fundobotoes.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                color: 1,1,1,1
+                on_release:
+                    root.manager.current = "tela_pergunta"
+                    root.manager.get_screen("tela_pergunta").carregar_perguntas("aleatorio")
+            Button:
+                text: "Alfabeto"
+                font_size: 18
+                id: alfabeto
+                size_hint: .8, None
+                height: 50
+                background_normal: "imagens/fundobotoes.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                color: 1,1,1,1
+                on_release:
+                    root.manager.current = "tela_pergunta"
+                    root.manager.get_screen("tela_pergunta").carregar_perguntas("alfabeto")
+            Button:
+                text: "Saudações"
+                font_size: 18
+                id: saudacoes
+                size_hint: .8, None
+                height: 50
+                background_normal: "imagens/fundobotoes.png"
+                background_down: "imagens/fundobotoes_pressed.png"
+                color: 1,1,1,1
+                on_release:
+                    root.manager.current = "tela_pergunta"
+                    root.manager.get_screen("tela_pergunta").carregar_perguntas("saudacoes")
+
+
+
+
+
