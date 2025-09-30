@@ -190,6 +190,9 @@ class TelaSaudacoes(Screen):
     pass
 
 class TelaTradutor(Screen):
+    def on_enter(self):
+        # Quando o usuário entrar nessa tela, inicia o sensor
+        usar_sensor()
     pass
 
 class TelaPraticar(Screen):
@@ -387,6 +390,7 @@ class Tradilibras(MDApp):
         self.sm.add_widget(TelaVideoaula(name='tela_videoaula'))
         self.sm.add_widget(TelaTextos(name='tela_textos'))
         self.sm.add_widget(TelaCumprimento(name='tela_cumprimento'))
+        self.sm.add_widget(SensorScreen(name="sensor"))
         return self.sm
 
     def __init__(self, **kwargs):
