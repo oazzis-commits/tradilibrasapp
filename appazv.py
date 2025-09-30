@@ -392,6 +392,10 @@ class Tradilibras(MDApp):
         self.sm.add_widget(TelaCumprimento(name='tela_cumprimento'))
         return self.sm
 
+        sm = ScreenManager()
+        sm.add_widget(SensorScreen(name="sensor"))
+        return sm
+
 
 
     def __init__(self, **kwargs):
