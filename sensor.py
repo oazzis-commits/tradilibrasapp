@@ -1,6 +1,8 @@
 import numpy as np
 import torch
 import torch.nn as nn
+import mediapipe as mp
+import cv2
 
 # ================================
 # 1. Definir modelo (mesmo do treino)
@@ -125,3 +127,7 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
+
+def usar_sensor():
+    return None

@@ -19,8 +19,8 @@ from kivymd.app import MDApp
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton, MDRaisedButton
 from functools import partial
-from random import sample
 import json, os
+from sensor import usar_sensor
 
 
 
@@ -390,8 +390,9 @@ class Tradilibras(MDApp):
         self.sm.add_widget(TelaVideoaula(name='tela_videoaula'))
         self.sm.add_widget(TelaTextos(name='tela_textos'))
         self.sm.add_widget(TelaCumprimento(name='tela_cumprimento'))
-        self.sm.add_widget(SensorScreen(name="sensor"))
         return self.sm
+
+
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
